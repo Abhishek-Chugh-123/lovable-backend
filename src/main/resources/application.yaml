@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: Lovable
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      base-url: https://openrouter.ai/api
+      chat:
+        options:
+          model: openrouter/auto
+          temperature: 0.3
+
+jwt:
+  secret-key: ${JWT_SECRET_KEY}
+
+stripe:
+  api:
+    secret: ${STRIPE_SECRET_KEY}
+  webhook:
+    secret: ${STRIPE_WEBHOOK_SECRET}
+
+client:
+  url: ${CLIENT_URL}
+
+minio:
+  url: ${MINIO_URL}
+  access-key: ${MINIO_ACCESS_KEY}
+  secret-key: ${MINIO_SECRET_KEY}
+  project-bucket: ${MINIO_PROJECT_BUCKET}
